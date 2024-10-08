@@ -1,0 +1,76 @@
+CREATE DATABASE ampu_mart;
+USE ampu_mart;
+
+CREATE TABLE tbKaryawan (
+idkaryawan VARCHAR(5) PRIMARY KEY,
+namakaryawan VARCHAR(50),
+teleponkaryawan VARCHAR(15),
+jabatan VARCHAR(20),
+sandi VARCHAR(15)
+)
+
+CREATE TABLE tbPemasok (
+idpemasok VARCHAR(5)PRIMARY KEY,
+namapemasok VARCHAR (50),
+kontak VARCHAR (25),
+pic VARCHAR(35)
+)
+
+CREATE TABLE tbPelanggan (
+idpelanggan VARCHAR(10) PRIMARY KEY,
+namapelanggan VARCHAR(50),
+alamatpelanggan VARCHAR(20),
+teleponpelanggan VARCHAR(25)
+)
+
+CREATE TABLE tbPenjualan (
+notajual VARCHAR(15) PRIMARY KEY,
+tgljual DATE,
+idkaryawan VARCHAR(5),
+idpelanggan VARCHAR(10),
+totaljual INT,
+FOREIGN KEY (idkaryawan) REFERENCES tbKaryawan(idkaryawan),
+FOREIGN KEY (idpelanggan) REFERENCES tbPelanggan(idpelanggan)
+)
+
+CREATE TABLE tbKategori (
+idkategori VARCHAR(3) PRIMARY KEY,
+namakategori VARCHAR(40)
+)
+
+CREATE TABLE tbProduk (
+idproduk VARCHAR(15) PRIMARY KEY,
+namaproduk VARCHAR(70),
+idkategori VARCHAR(3),
+stok INT,
+harga INT,
+FOREIGN KEY (idkategori) REFERENCES tbKategori(idkategori)
+)
+
+CREATE TABLE tbPembelian (
+notabeli VARCHAR(15) PRIMARY KEY,
+tglbeli DATE,
+idkaryawan VARCHAR(5),
+idpemasok VARCHAR(5),
+totalbeli INT,
+FOREIGN KEY (idkaryawan) REFERENCES tbKaryawan(idkaryawan),
+FOREIGN KEY (idpemasok) REFERENCES tbPemasok(idpemasok)
+)
+
+CREATE TABLE tbDetailJual (
+notajual VARCHAR(15) PRIMARY KEY,
+idproduk VARCHAR(15),
+jumlah SMALLINT,
+harga INT,
+subtotal INT,
+FOREIGN KEY (idproduk) REFERENCES tbProduk(idproduk)
+)
+
+CREATE TABLE tbDetailBeli (
+notabeli VARCHAR(15) PRIMARY KEY,
+idproduk VARCHAR(15),
+jumlah SMALLINT,
+harga INT,
+subtotal INT,
+FOREIGN KEY (idproduk) REFERENCES tbProduk(idproduk)
+)
