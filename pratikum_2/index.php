@@ -19,6 +19,12 @@ include "./components/header.php";
         $increment = 1;
         $sql = "SELECT * FROM tbkaryawan";
         $query = mysqli_query($connect, $sql);
+        $check = mysqli_num_rows($query);
+        if($check < 0 ) {
+            echo "<tr>
+                <td cols='5'>Data found</td>
+            </tr>";
+        } 
         while($data = mysqli_fetch_assoc($query)) :
         ?>
         <tr>
