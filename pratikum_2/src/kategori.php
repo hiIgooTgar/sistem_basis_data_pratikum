@@ -6,10 +6,14 @@ include "../components/navbar_inside.php";
 ?>
 
 <div class="container">
+    <a href="./insert_kategori.php" class="btn btn-primary">
+        Tambah Kategori
+    </a>
     <table class="table-main">
         <tr>
             <th>No</th>
             <th>Nama Kategori</th>
+            <th>Action</th>
         </tr>
         <?php 
         $increment = 1;
@@ -25,6 +29,10 @@ include "../components/navbar_inside.php";
         <tr>
             <td><?= $increment++ ?></td>
             <td><?= $data['namakategori'] ?></td>
+            <td>
+                <a href="./update_kategori.php?idkategori=<?= $data['idkategori'] ?>">Ubah</a>
+                <a href="./delete_kategori.php?idkategori=<?= $data['idkategori'] ?>" onclick="return confirm('Yakin data dihapus?');">Hapus</a>
+            </td>
         </tr>
         <?php endwhile; ?>
     </table>
