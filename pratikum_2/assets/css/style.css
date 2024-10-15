@@ -42,14 +42,27 @@
   cursor: pointer;
 }
 
+.btn-sm {
+  padding: 0.14rem 0.3rem;
+  font-size: 0.9rem;
+}
+
 .btn-primary {
   background: #434ff5;
   color: #fff;
   border: none;
 }
 
-.btn-primary:hover {
-  background: #505bed;
+.btn-danger {
+  background: #f73939;
+  color: #fff;
+  border: none;
+}
+
+.btn-warning {
+  background: #f7f139;
+  color: #000;
+  border: none;
 }
 
 .form-main {

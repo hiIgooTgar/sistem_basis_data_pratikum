@@ -30,8 +30,8 @@ include "../components/navbar_inside.php";
             <td><?= $increment++ ?></td>
             <td><?= $data['namakategori'] ?></td>
             <td>
-                <a href="./update_kategori.php?idkategori=<?= $data['idkategori'] ?>">Ubah</a>
-                <a href="./delete_kategori.php?idkategori=<?= $data['idkategori'] ?>" onclick="return confirm('Yakin data dihapus?');">Hapus</a>
+                <a class="btn-warning btn-sm" href="./update_kategori.php?idkategori=<?= $data['idkategori'] ?>">Ubah</a>
+                <a class="btn-danger btn-sm" href="./delete_kategori.php?idkategori=<?= $data['idkategori'] ?>" onclick="return confirm('Yakin data dihapus?');">Hapus</a>
             </td>
         </tr>
         <?php endwhile; ?>

@@ -27,6 +27,7 @@ if(isset($_POST['addKategori'])) {
 ?>
 
 <div class="container">
+    <a href="./kategori.php" class="btn btn-sm">Kembali</a>
     <form method="post" action="" class="form-main">
         <div class="form-group">
             <label for="namakategori" class="form-label">Nama Kategori</label>

@@ -25,13 +25,14 @@ if(mysqli_num_rows($query) < 1) {
 ?>
 
 <div class="container">
+     <a href="./kategori.php" class="btn btn-sm">Kembali</a>
     <form method="post" action="" class="form-main">
         <input type="hidden" name="idkategori" value="<?= $dataKategori['idkategori'] ?>">
         <div class="form-group">
             <label for="namakategori" class="form-label">Nama Kategori</label>
             <input value="<?= $dataKategori['namakategori'] ?>" type="text" id="namakategori" autocomplete="off" class="form-control" name="namakategori">
         </div>
-        <button name="updateKategori" class="btn btn-primary" type="submit">Submit</button>
+        <button name="updateKategori" class="btn btn-primary" type="submit">Update</button>
     </form>
 </div>
 

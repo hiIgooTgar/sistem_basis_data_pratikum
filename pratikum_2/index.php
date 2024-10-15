@@ -7,6 +7,7 @@ include "./components/header.php";
 <?php include "./components/navbar.php"; ?>
 
 <div class="container">
+    <a href="./src/insert_karyawan.php" class="btn btn-primary">Tambah Karyawan</a>
     <table class="table-main">
         <tr>
             <th>No</th>
@@ -14,10 +15,11 @@ include "./components/header.php";
             <th>Telepone</th>
             <th>Jabatan</th>
             <th>Sandi</th>
+            <th>Action</th>
         </tr>
         <?php 
         $increment = 1;
-        $sql = "SELECT * FROM tbkaryawan";
+        $sql = "SELECT * FROM tbkaryawan ORDER BY idkaryawan DESC";
         $query = mysqli_query($connect, $sql);
         $check = mysqli_num_rows($query);
         if($check < 0 ) {
@@ -33,6 +35,10 @@ include "./components/header.php";
             <td><?= $data['teleponkaryawan'] ?></td>
             <td><?= $data['jabatan'] ?></td>
             <td><?= $data['sandi'] ?></td>
+            <td>
+                <a href="./src/update_karyawan.php?idkaryawan=<?= $data['idkaryawan'] ?>" class="btn-warning btn-sm">Ubah</a>
+                <a href="./src/delete_karyawan.php?idkaryawan=<?= $data['idkaryawan'] ?>" class="btn-danger btn-sm" onclick="return confirm('Yakin ingin dihapus?');">Delete</a>
+            </td>
         </tr>
         <?php endwhile; ?>
     </table>
