@@ -13,19 +13,19 @@ include "../components/navbar_inside.php";
     <form action="" method="post" class="form-main">
         <div class="form-group">
             <label for="namakaryawan" class="form-label">Nama Karyawan</label>
-            <input class="form-control" type="text" name="namakaryawan" id="namakaryawan">
+            <input autocomplete="off" class="form-control" type="text" name="namakaryawan" id="namakaryawan">
         </div>
         <div class="form-group">
             <label for="teleponkaryawan" class="form-label">Telepon Karyawan</label>
-            <input class="form-control" type="number" name="teleponkaryawan" id="teleponkaryawan">
+            <input autocomplete="off" class="form-control" type="number" name="teleponkaryawan" id="teleponkaryawan">
         </div>
         <div class="form-group">
             <label for="jabatan" class="form-label">Jabatan</label>
-            <input class="form-control" type="text" name="jabatan" id="jabatan">
+            <input autocomplete="off" class="form-control" type="text" name="jabatan" id="jabatan">
         </div>
         <div class="form-group">
             <label for="sandi" class="form-label">Sandi</label>
-            <input class="form-control" type="text" name="sandi" id="sandi">
+            <input autocomplete="off" class="form-control" type="text" name="sandi" id="sandi">
         </div>
         <button type="submit" name="addKaryawan" class="btn btn-primary">Submit</button>
     </form>

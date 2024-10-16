@@ -30,19 +30,19 @@ if(mysqli_num_rows($query) < 1) {
         <input type="hidden" name="idkaryawan" value="<?= $dataKaryawan['idkaryawan'] ?>">
         <div class="form-group">
             <label for="namakaryawan" class="form-label">Nama Karyawan</label>
-            <input class="form-control" type="text" name="namakaryawan" value="<?= $dataKaryawan['namakaryawan'] ?>" id="namakaryawan">
+            <input autocomplete="off" class="form-control" type="text" name="namakaryawan" value="<?= $dataKaryawan['namakaryawan'] ?>" id="namakaryawan">
         </div>
         <div class="form-group">
             <label for="teleponkaryawan" class="form-label">Telepon Karyawan</label>
-            <input class="form-control" type="number" value="<?= $dataKaryawan['teleponkaryawan'] ?>" name="teleponkaryawan" id="teleponkaryawan">
+            <input autocomplete="off" class="form-control" type="number" value="<?= $dataKaryawan['teleponkaryawan'] ?>" name="teleponkaryawan" id="teleponkaryawan">
         </div>
         <div class="form-group">
             <label for="jabatan" class="form-label">Jabatan</label>
-            <input class="form-control" value="<?= $dataKaryawan['jabatan'] ?>" type="text" name="jabatan" id="jabatan">
+            <input autocomplete="off" class="form-control" value="<?= $dataKaryawan['jabatan'] ?>" type="text" name="jabatan" id="jabatan">
         </div>
         <div class="form-group">
             <label for="sandi" class="form-label">Sandi</label>
-            <input class="form-control" value="<?= $dataKaryawan['sandi'] ?>" type="text" name="sandi" id="sandi">
+            <input autocomplete="off" class="form-control" value="<?= $dataKaryawan['sandi'] ?>" type="text" name="sandi" id="sandi">
         </div>
         <button type="submit" name="updateKaryawan" class="btn btn-primary">Update</button>
     </form>

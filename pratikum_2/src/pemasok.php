@@ -6,16 +6,18 @@ include "../components/navbar_inside.php";
 ?>
 
 <div class="container">
+    <a href="./insert_pemasok.php" class="btn btn-primary">Tambah Pemasok</a>
     <table class="table-main">
         <tr>
             <th>No</th>
             <th>Nama Pemasok</th>
-            <th>Telepon</th>
-            <th>Pic</th>
+            <th>Kontak</th>
+            <th>PIC</th>
+            <th>Action</th>
         </tr>
         <?php 
         $increment = 1;
-        $sql = "SELECT * FROM tbpemasok";
+        $sql = "SELECT * FROM tbpemasok ORDER BY idpemasok DESC";
         $query = mysqli_query($connect, $sql);
         $check = mysqli_num_rows($query);
         if($check == 0 ) {
@@ -30,6 +32,10 @@ include "../components/navbar_inside.php";
             <td><?= $data['namapemasok'] ?></td>
             <td><?= $data['kontak'] ?></td>
             <td><?= $data['pic'] ?></td>
+            <td>
+                <a href="./update_pemasok.php?idpemasok=<?= $data['idpemasok'] ?>" class="btn-sm btn-warning">Ubah</a>
+                <a href="./delete_pemasok.php?idpemasok=<?= $data['idpemasok'] ?>" onclick="return confirm('Yakin anda ingin hapus?');" class="btn-sm btn-danger">Hapus</a>
+            </td>
         </tr>
         <?php endwhile; ?>
     </table>
