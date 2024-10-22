@@ -7,6 +7,7 @@ include "../components/navbar_inside.php"
 ?>
 
 <div class="container">
+    <a href="./insert_pembelian.php" class="btn btn-primary">Tambah Pembelian</a>
     <table class="table-main">
         <tr>
             <th>No</th>
@@ -16,7 +17,7 @@ include "../components/navbar_inside.php"
             <th>Pemasok</th>
             <th>Total</th>
         </tr>
-        <?php 
+        <?php
         $increment = 1;
         $query = mysqli_query($connect, "SELECT tbpembelian.*, tbkaryawan.namakaryawan, tbpemasok.namapemasok FROM tbpembelian 
         INNER JOIN tbkaryawan ON tbkaryawan.idkaryawan = tbpembelian.idkaryawan
