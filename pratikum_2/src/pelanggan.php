@@ -33,6 +33,10 @@ include "../components/navbar_inside.php"
             <td><?= $data['namapelanggan'] ?></td>
             <td><?= $data['teleponpelanggan'] ?></td>
             <td><?= $data['alamatpelanggan'] ?></td>
+            <td>
+                <a class="btn-sm btn-warning" href="./update_pelanggan.php?idpelanggan=<?= $data['idpelanggan'] ?>">Ubah</a>
+                <a class="btn-sm btn-danger" href="">Hapus</a>
+            </td>
         </tr>
         <?php endwhile; ?>
     </table>
