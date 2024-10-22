@@ -11,11 +11,12 @@ include "../components/navbar_inside.php"
     <table class="table-main">
         <tr>
             <th>No</th>
-            <th>Nota</th>
+            <th>Nota Beli</th>
             <th>Tanggal</th>
             <th>Karyawan</th>
             <th>Pemasok</th>
-            <th>Total</th>
+            <th>Total beli</th>
+            <th>Action</th>
         </tr>
         <?php
         $increment = 1;
@@ -42,6 +43,10 @@ include "../components/navbar_inside.php"
             <td><?= $data['namakaryawan'] ?></td>
             <td><?= $data['namapemasok'] ?></td>
             <td><?= $data['totalbeli'] ?></td>
+            <td>
+                <a href="./update_pembelian.php?idpembelian=<?= $data['idpembelian'] ?>" class="btn-sm btn-warning">Ubah</a>
+                <a href="" class="btn-sm btn-danger">Hapus</a>
+            </td>
         </tr>
         <?php 
         endwhile;
