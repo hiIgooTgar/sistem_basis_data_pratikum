@@ -35,7 +35,7 @@ include "../components/navbar_inside.php"
             <td><?= $data['alamatpelanggan'] ?></td>
             <td>
                 <a class="btn-sm btn-warning" href="./update_pelanggan.php?idpelanggan=<?= $data['idpelanggan'] ?>">Ubah</a>
-                <a class="btn-sm btn-danger" href="">Hapus</a>
+                <a class="btn-sm btn-danger" href="./delete_pelanggan.php?idpelanggan=<?= $data['idpelanggan'] ?>" onclick="return confirm('Yakin data ingin dihapus?');" >Hapus</a>
             </td>
         </tr>
         <?php endwhile; ?>
