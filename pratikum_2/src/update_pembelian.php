@@ -69,13 +69,12 @@ include "../components/footer.php";
 
 if(isset($_POST['addPembelian'])) {
     $idpembelian = htmlspecialchars($_POST['idpembelian']);
-    $notabeli = htmlspecialchars($_POST['notabeli']);
     $tglbeli = date($_POST['tglbeli']);
     $idkaryawan = htmlspecialchars($_POST['idkaryawan']);
     $idpemasok = htmlspecialchars($_POST['idpemasok']);
     $totalbeli = htmlspecialchars($_POST['totalbeli']);
 
-    $query = "UPDATE tbpembelian SET notabeli = '$notabeli', tglbeli = '$tglbeli'
+    $query = "UPDATE tbpembelian SET tglbeli = '$tglbeli'
     , idkaryawan = '$idkaryawan', idpemasok = '$idpemasok', totalbeli = '$totalbeli' WHERE idpembelian = '$idpembelian'";
 
     $sql = mysqli_query($connect, $query);
