@@ -45,7 +45,7 @@ include "../components/navbar_inside.php"
             <td><?= $data['totaljual'] ?></td>
             <td>
                 <a href="./update_penjualan.php?idpenjualan=<?= $data['idpenjualan'] ?>" class="btn-sm btn-warning">Ubah</a>
-                <a href="" class="btn-sm btn-danger">Hapus</a>
+                <a onclick="return confirm('Yakin data ingin dihapus?');" href="./delete_penjualan.php?idpenjualan=<?= $data['idpenjualan'] ?>" class="btn-sm btn-danger">Hapus</a>
             </td>
         </tr>
         <?php 
