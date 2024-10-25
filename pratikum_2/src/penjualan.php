@@ -15,7 +15,8 @@ include "../components/navbar_inside.php"
             <th>Tanggal</th>
             <th>Karyawan</th>
             <th>Nama Pelanggan</th>
-            <th>Total total</th>
+            <th>Total Jual</th>
+            <th>Action</th>
         </tr>
         <?php
         $increment = 1;
@@ -43,7 +44,7 @@ include "../components/navbar_inside.php"
             <td><?= $data['namapelanggan'] ?></td>
             <td><?= $data['totaljual'] ?></td>
             <td>
-                <a href="./update_penjualan.php?idpembelian=<?= $data['idpembelian'] ?>" class="btn-sm btn-warning">Ubah</a>
+                <a href="./update_penjualan.php?idpenjualan=<?= $data['idpenjualan'] ?>" class="btn-sm btn-warning">Ubah</a>
                 <a href="" class="btn-sm btn-danger">Hapus</a>
             </td>
         </tr>
