@@ -27,7 +27,7 @@ include "../components/navbar_inside.php"
         if($check == 0) {
             echo "
             <tr>
-                <td align='center' colspan='6'><h3>Data Penjualan Kosong!</h3></td>
+                <td align='center' colspan='7'><h3>Data Penjualan Kosong!</h3></td>
             </tr>
             ";
         }

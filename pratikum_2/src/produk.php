@@ -23,7 +23,7 @@ include "../components/navbar_inside.php";
         $check = mysqli_num_rows($query);
         if($check == 0) {
             echo "<tr>
-                <td colspan='5' align='center'><h3>Data Produk Kosong!</h3></td>
+                <td colspan='6' align='center'><h3>Data Produk Kosong!</h3></td>
             </tr>";
         }
         while($data = mysqli_fetch_assoc($query)) :

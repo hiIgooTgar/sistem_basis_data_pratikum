@@ -21,12 +21,12 @@ include "./components/header.php";
         $increment = 1;
         $sql = "SELECT * FROM tbkaryawan ORDER BY idkaryawan DESC";
         $query = mysqli_query($connect, $sql);
-        $check = mysqli_num_rows($query);
-        if($check < 0 ) {
+         $check = mysqli_num_rows($query);
+        if($check == 0) {
             echo "<tr>
-                <td cols='5'>Data found</td>
+                <td colspan='6' align='center'><h3>Data karyawan Kosong!</h3></td>
             </tr>";
-        } 
+        }
         while($data = mysqli_fetch_assoc($query)) :
         ?>
         <tr>

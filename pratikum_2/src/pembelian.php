@@ -27,7 +27,7 @@ include "../components/navbar_inside.php"
         if($check == 0) {
             echo "
             <tr>
-                <td align='center' colspan='6'><h3>Data Pembelian Kosong!</h3></td>
+                <td align='center' colspan='7'><h3>Data Pembelian Kosong!</h3></td>
             </tr>
             ";
         }
@@ -44,6 +44,7 @@ include "../components/navbar_inside.php"
             <td><?= $data['namapemasok'] ?></td>
             <td><?= $data['totalbeli'] ?></td>
             <td>
+                <a class="btn-sm btn-primary" href="./show_detailbeli.php?notabeli=<?= $data['notabeli'] ?>">Detail</a>
                 <a href="./update_pembelian.php?idpembelian=<?= $data['idpembelian'] ?>" class="btn-sm btn-warning">Ubah</a>
                 <a href="" class="btn-sm btn-danger">Hapus</a>
             </td>
