@@ -23,6 +23,7 @@ include "../components/navbar_inside.php"
         $query = mysqli_query($connect, "SELECT tbpembelian.*, tbkaryawan.namakaryawan, tbpemasok.namapemasok FROM tbpembelian 
         INNER JOIN tbkaryawan ON tbkaryawan.idkaryawan = tbpembelian.idkaryawan
         INNER JOIN tbpemasok ON tbpembelian.idpemasok = tbpemasok.idpemasok");
+
         $check = mysqli_num_rows($query);
         if($check == 0) {
             echo "
