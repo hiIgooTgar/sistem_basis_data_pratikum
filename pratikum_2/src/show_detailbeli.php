@@ -11,10 +11,10 @@ if(!isset($notabeli)) {
     echo"<script>alert('Data tidak ditemukan!');</script>";
 }
 
-$query = "SELECT tbpembelian.notabeli, tbdetailbeli.* FROM tbpembelian
-INNER JOIN tbdetailbeli ON tbpembelian.notabeli = tbdetailbeli.notabeli";
+$query = "SELECT tbdetailbeli.*, tbpembelian.notabeli FROM tbdetailbeli
+INNER JOIN tbpembelian ON tbdetailbeli.notabeli = tbpembelian.notabeli WHERE tbdetailbeli.notabeli = '$notabeli'";
 $sql = mysqli_query($connect, $query);
-$fetchData = mysqli_fetch_assoc($sql);
+$fetchDetail = mysqli_fetch_assoc($sql);
 
 if(mysqli_num_rows($sql) > 1) {
     die("Data tidak ditemukan!");
@@ -25,11 +25,11 @@ if(mysqli_num_rows($sql) > 1) {
 <div class="container">
     <div class="form-group">
         <label for="notabeli" class="form-label">Nota Beli</label>
-        <input type="text" name="notabeli" value="<?= $fetchData['notabeli'] ?>" readonly id="notabeli" class="form-control">
+        <input type="text" name="notabeli" value="<?= $fetchDetail['notabeli'] ?>" readonly id="notabeli" class="form-control">
     </div>
     <div class="form-group">
         <label for="idproduk" class="form-label">Nama Produk</label>
-        <input type="text" value="<?= $fetchData['idproduk'] ?>" name="idproduk" readonly id="idproduk" class="form-control">
+        <input type="text" value="<?= $fetchDetail['idproduk'] ?>" name="idproduk" readonly id="idproduk" class="form-control">
     </div>
     <div class="form-group">
         <label for="jumlah" class="form-label">Jumlah</label>
