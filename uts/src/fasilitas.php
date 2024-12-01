@@ -10,39 +10,42 @@ include '../components/header.php'
     <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       Tambah data fasilitas
     </button>
-    <table class="table table-hover table-responsive">
-      <thead>
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">ID Fasilitas</th>
-          <th scope="col">Nama Fasilitas</th>
-          <th scope="col">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
+    <div class="table-responsive">
 
-        $a = 1;
-        $sql = "SELECT * FROM fasilitas";
-        $query = mysqli_query($connect, $sql);
-        while ($data = mysqli_fetch_assoc($query)) :
-
-        ?>
+      <table class="table table-hover">
+        <thead>
           <tr>
-            <th scope="row"><?= $a++ ?></th>
-            <td><?= $data['id_fasilitas'] ?></td>
-            <td><?= $data['nama_fasilitas'] ?></td>
-            <td>
-              <a href="" class="badge bg-warning text-dark">Ubah</a>
-              <a href="./delete_fasilitas.php?id_fasilitas=<?= $data['id_fasilitas'] ?>" onclick="return confirm('Apakah anda ingin dihapus?')" class="badge bg-danger">Hapus</a>
-            </td>
+            <th scope="col">No</th>
+            <th scope="col">ID Fasilitas</th>
+            <th scope="col">Nama Fasilitas</th>
+            <th scope="col">Aksi</th>
           </tr>
-        <?php
-        endwhile;
-        ?>
+        </thead>
+        <tbody>
+          <?php
 
-      </tbody>
-    </table>
+          $a = 1;
+          $sql = "SELECT * FROM fasilitas";
+          $query = mysqli_query($connect, $sql);
+          while ($data = mysqli_fetch_assoc($query)) :
+
+          ?>
+            <tr>
+              <th scope="row"><?= $a++ ?></th>
+              <td><?= $data['id_fasilitas'] ?></td>
+              <td><?= $data['nama_fasilitas'] ?></td>
+              <td>
+                <a href="./ubah_fasilitas.php?id_fasilitas=<?= $data['id_fasilitas'] ?>" class="badge bg-warning text-dark">Ubah</a>
+                <a href="./delete_fasilitas.php?id_fasilitas=<?= $data['id_fasilitas'] ?>" onclick="return confirm('Apakah anda ingin dihapus?')" class="badge bg-danger">Hapus</a>
+              </td>
+            </tr>
+          <?php
+          endwhile;
+          ?>
+
+        </tbody>
+      </table>
+    </div>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">

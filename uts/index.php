@@ -65,13 +65,13 @@
             <h3>Selamat Datang di Webiste</h3>
             <h2><b>Penyewaan Gedung | <span class="text-primary">MyAedificium</span></b></h2>
             <p class="wid">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut quibusdam nulla impedit officia fuga. Reprehenderit aut dignissimos quisquam adipisci aliquam pariatur ad recusandae facere harum? Omnis explicabo vero voluptates adipisci?</p>
-            <a href="" class="btn btn-primary mt-2">Selengkapnya...</a>
+            <a href="#about" class="btn btn-primary mt-2">Selengkapnya...</a>
         </div>
     </main>
     </div>
     <div class="bg-white text-dark pt-3">
         <div class="container">
-            <section class="about-section my-5">
+            <section class="about-section py-5" id="about">
                 <h2>Tentang <span class="text-primary">MyAedificium</span></h2>
                 <div class="row">
                     <div class="col-md-6">
@@ -132,7 +132,7 @@
 
         </div>
         <footer class="bg-light py-3">
-            <p class="text-center">MyAedificium | <span id="date_copy"></span></p>
+            <p class="text-center mb-0">MyAedificium | &copy; <span id="date_copy"></span></p>
         </footer>
 
     </div>

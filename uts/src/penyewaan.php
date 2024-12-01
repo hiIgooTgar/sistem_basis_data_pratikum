@@ -10,49 +10,47 @@ include '../components/header.php'
     <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       Tambah data penyewaan
     </button>
-    <table class="table table-hover table-responsive">
-      <thead>
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">ID Penyewaan</th>
-          <th scope="col">No KTP</th>
-          <th scope="col">Anggota Penyewa</th>
-          <th scope="col">No Gedung</th>
-          <th scope="col">Nama Gedung</th>
-          <th scope="col">Tanggal Penyewaan</th>
-          <th scope="col">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
 
-        $a = 1;
-        $sql = "SELECT penyewaan.*, anggota.no_ktp, anggota.nama AS nama_anggota, gedung.no_gedung, gedung.nama_gedung FROM penyewaan
-    INNER JOIN anggota ON penyewaan.no_ktp = anggota.no_ktp
-    INNER JOIN gedung ON penyewaan.no_gedung = gedung.no_gedung";
-        $query = mysqli_query($connect, $sql);
-        while ($data = mysqli_fetch_assoc($query)) :
-          $date = $data['tanggal_penyewaan']
-        ?>
+    <div class="table-responsive">
+      <table class="table table-hover ">
+        <thead>
           <tr>
-            <th scope="row"><?= $a++ ?></th>
-            <td><?= $data['id_penyewaan'] ?></td>
-            <td><?= $data['no_ktp'] ?></td>
-            <td><?= $data['nama_anggota'] ?></td>
-            <td><?= $data['no_gedung'] ?></td>
-            <td><?= $data['nama_gedung'] ?></td>
-            <td><?= date('d F Y', strtotime($date)) ?></td>
-            <td>
-              <a href="" class="badge bg-warning text-dark">Ubah</a>
-              <a href="./delete_penyewaan.php?id_penyewaan=<?= $data['id_penyewaan'] ?>" onclick="return confirm('Apakah anda ingin dihapus?')" class="badge bg-danger">Hapus</a>
-            </td>
+            <th scope="col">No</th>
+            <th scope="col">ID Penyewaan</th>
+            <th scope="col">No KTP</th>
+            <th scope="col">No Gedung</th>
+            <th scope="col">Tanggal Penyewaan</th>
+            <th scope="col">Aksi</th>
           </tr>
-        <?php
-        endwhile;
-        ?>
+        </thead>
+        <tbody>
+          <?php
 
-      </tbody>
-    </table>
+          $a = 1;
+          $sql = "SELECT  * FROM penyewaan";
+          $query = mysqli_query($connect, $sql);
+          while ($data = mysqli_fetch_assoc($query)) :
+            $date = $data['tanggal_penyewaan']
+          ?>
+            <tr>
+              <th scope="row"><?= $a++ ?></th>
+              <td><?= $data['id_penyewaan'] ?></td>
+              <td><?= $data['no_ktp'] ?></td>
+              <td><?= $data['no_gedung'] ?></td>
+              <td><?= date('d F Y', strtotime($date)) ?></td>
+              <td>
+                <a href="./detail_penyewaan.php?id_penyewaan=<?= $data['id_penyewaan'] ?>" class=" badge bg-info text-dark">Detail</a>
+                <a href="./ubah_penyewaan.php?id_penyewaan=<?= $data['id_penyewaan'] ?>" class="badge bg-warning text-dark">Ubah</a>
+                <a href="./delete_penyewaan.php?id_penyewaan=<?= $data['id_penyewaan'] ?>" onclick="return confirm('Apakah anda ingin dihapus?')" class="badge bg-danger">Hapus</a>
+              </td>
+            </tr>
+          <?php
+          endwhile;
+          ?>
+
+        </tbody>
+      </table>
+    </div>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">

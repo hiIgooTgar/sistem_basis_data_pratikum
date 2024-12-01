@@ -10,46 +10,49 @@ include '../components/header.php'
     <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       Tambah data gedung
     </button>
-    <table class="table table-hover table-responsive">
-      <thead>
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">Nomor Gedung</th>
-          <th scope="col">Nama Gedung</th>
-          <th scope="col">Kapasitas</th>
-          <th scope="col">Harga Sewa</th>
-          <th scope="col">Fasilitas</th>
-          <th scope="col">Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
 
-        $a = 1;
-        $sql = "SELECT gedung.*, fasilitas.nama_fasilitas FROM gedung
-    INNER JOIN  fasilitas ON gedung.id_fasilitas = fasilitas.id_fasilitas";
-        $query = mysqli_query($connect, $sql);
-        while ($data = mysqli_fetch_assoc($query)) :
-
-        ?>
+    <div class="table-responsive">
+      <table class="table table-hover ">
+        <thead>
           <tr>
-            <th scope="row"><?= $a++ ?></th>
-            <td><?= $data['no_gedung'] ?></td>
-            <td><?= $data['nama_gedung'] ?></td>
-            <td><?= $data['kapasitas'] ?></td>
-            <td><?= $data['harga_sewa'] ?></td>
-            <td><?= $data['nama_fasilitas'] ?></td>
-            <td>
-              <a href="" class="badge bg-warning text-dark">Ubah</a>
-              <a href="./delete_gedung.php?no_gedung=<?= $data['no_gedung'] ?>" onclick="return confirm('Apakah anda ingin dihapus?')" class="badge bg-danger">Hapus</a>
-            </td>
+            <th scope="col">No</th>
+            <th scope="col">Nomor Gedung</th>
+            <th scope="col">Nama Gedung</th>
+            <th scope="col">Kapasitas</th>
+            <th scope="col">Harga Sewa</th>
+            <th scope="col">Fasilitas</th>
+            <th scope="col">Aksi</th>
           </tr>
-        <?php
-        endwhile;
-        ?>
+        </thead>
+        <tbody>
+          <?php
 
-      </tbody>
-    </table>
+          $a = 1;
+          $sql = "SELECT gedung.*, fasilitas.nama_fasilitas FROM gedung
+    INNER JOIN  fasilitas ON gedung.id_fasilitas = fasilitas.id_fasilitas";
+          $query = mysqli_query($connect, $sql);
+          while ($data = mysqli_fetch_assoc($query)) :
+
+          ?>
+            <tr>
+              <th scope="row"><?= $a++ ?></th>
+              <td><?= $data['no_gedung'] ?></td>
+              <td><?= $data['nama_gedung'] ?></td>
+              <td><?= $data['kapasitas'] ?></td>
+              <td><?= $data['harga_sewa'] ?></td>
+              <td><?= $data['nama_fasilitas'] ?></td>
+              <td>
+                <a href="./ubah_gedung.php?no_gedung=<?= $data['no_gedung'] ?>" class="badge bg-warning text-dark">Ubah</a>
+                <a href="./delete_gedung.php?no_gedung=<?= $data['no_gedung'] ?>" onclick="return confirm('Apakah anda ingin dihapus?')" class="badge bg-danger">Hapus</a>
+              </td>
+            </tr>
+          <?php
+          endwhile;
+          ?>
+
+        </tbody>
+      </table>
+    </div>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
