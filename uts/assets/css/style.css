@@ -23,3 +23,14 @@
   width: 100%;
   height: 100%;
 }
+
+/* sign in / sign up */
+.content-card-sign {
+  position: relative;
+}
+
+.content-card-sign .home-icon {
+  position: absolute;
+  bottom: 3%;
+  right: -5%;
+}
