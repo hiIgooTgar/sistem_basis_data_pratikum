@@ -2,7 +2,7 @@
 
 session_start();
 if (!empty($_SESSION['signin'])) {
-    header("Location: sign_in.php");
+    header("Location: ./uts/sign_in.php");
 }
 
 ?>
@@ -34,11 +34,11 @@ if (!empty($_SESSION['signin'])) {
                             <label for="password" class="form-label">Password</label>
                             <input type="password" autocomplete="off" class="form-control" id="password" name="password">
                         </div>
-                        <button type="submit" class="btn btn-primary" name="signIp">Sign Ip</button>
+                        <button type="submit" class="btn btn-primary" name="signIp">Sign In</button>
                         <p class="mt-4">Belum punya akun? <span><a href="./sign_up.php">Sign Up</a></span> sekarang!</p>
                     </form>
                     <div class="home-icon">
-                        <a class="text-white btn btn-sm btn-primary" href="./index.php"><i class="bi bi-house"></i> Home</a>
+                        <a class="text-white btn btn-sm btn-primary" href="./"><i class="bi bi-house"></i> Home</a>
                     </div>
                 </div>
             </div>

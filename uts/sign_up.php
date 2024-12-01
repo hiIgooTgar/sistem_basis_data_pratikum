@@ -33,7 +33,7 @@
                         <p class="mt-4">Sudah punya akun? <span><a href="./sign_in.php">Sign In</a></span> sekarang!</p>
                     </form>
                     <div class="home-icon">
-                        <a class="text-white btn btn-sm btn-primary" href="./index.php"><i class="bi bi-house"></i> Home</a>
+                        <a class="text-white btn btn-sm btn-primary" href="./"><i class="bi bi-house"></i> Home</a>
                     </div>
                 </div>
             </div>
