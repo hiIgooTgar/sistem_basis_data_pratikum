@@ -68,8 +68,9 @@ if (isset($_POST['signIp'])) {
             $_SESSION['username'] = $data['username'];
             $_SESSION['password'] = $data['password'];
             $_SESSION['nama_lengkap'] = $data['nama_lengkap'];
+            $_SESSION['role'] = $data['role'];
             $_SESSION['id_users'] = $data['id_users'];
-            header("Location: ./src/anggota.php");
+            header("Location: ./");
         } else {
             echo "
             <script>alert('Password anda salah!');

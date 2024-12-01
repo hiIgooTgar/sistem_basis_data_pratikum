@@ -55,6 +55,7 @@ if (isset($_POST['signUp'])) {
     $username = htmlspecialchars($_POST['username']);
     $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
     $nama_lengkap = htmlspecialchars($_POST['nama_lengkap']);
+    $role = htmlspecialchars('users');
 
     $cek_username = mysqli_query($connect, "SELECT * FROM users WHERE username = '$username'");
     if (mysqli_num_rows($cek_username) > 0) {
@@ -63,7 +64,7 @@ if (isset($_POST['signUp'])) {
         document.location.href = 'sign_up.php'</script>
         ";
     } else {
-        $sql = "INSERT INTO users(id_users, username, password, nama_lengkap) VALUES('', '$username', '$password', '$nama_lengkap')";
+        $sql = "INSERT INTO users(id_users, username, password, nama_lengkap, role) VALUES('', '$username', '$password', '$nama_lengkap', '$role')";
         $query = mysqli_query($connect, $sql);
         if ($query) {
             echo "

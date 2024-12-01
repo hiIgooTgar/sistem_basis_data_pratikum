@@ -3,4 +3,5 @@
 session_start();
 session_destroy();
 
-header("Location: ./index.php");
+echo "<script>alert('Logout berhasil!'); 
+ document.location.href = './'</script>";

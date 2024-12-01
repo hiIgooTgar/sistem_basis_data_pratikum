@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +15,7 @@
 </head>
 
 <body>
-
-    <?php if (!isset($_SESSION['id_users'])) { ?>
+    <?php if (!isset($_SESSION['id_users']) || !isset($_SESSION['role']) == 'admin' || !isset($_SESSION['role']) == 'users') { ?>
         <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="#">
@@ -34,29 +35,59 @@
             </div>
         </nav>
     <?php } else { ?>
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">
-                    <h3>MyAedificium</h3>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ms-auto gap-2">
-                        <a class="nav-link text-white" aria-current="page" href="./">Home</a>
-                        <a class="nav-link text-white" href="./src/anggota.php">Anggota</a>
-                        <a class="nav-link text-white" href="./src/gedung.php">Gedung</a>
-                        <a class="nav-link text-white" href="./src/fasilitas.php">Fasilitas</a>
-                        <a class="nav-link text-white" href="./src/penyewaan.php">Penyewaan</a>
-                        <a class="nav-link btn btn-sm btn-light text-dark" aria-disabled="disabled">Welcome, <?= $_SESSION['nama_lengkap'] ?></a>
-                        <a class="nav-link text-white btn btn-sm btn-danger" href="./logout.php">Logout</a>
 
+        <?php if ($_SESSION['role'] == 'admin') { ?>
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#">
+                        <h3>MyAedificium</h3>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto gap-2">
+                            <a class="nav-link text-white" aria-current="page" href="./">Home</a>
+                            <a class="nav-link text-white" href="./src/anggota.php">Anggota</a>
+                            <a class="nav-link text-white" href="./src/gedung.php">Gedung</a>
+                            <a class="nav-link text-white" href="./src/fasilitas.php">Fasilitas</a>
+                            <a class="nav-link text-white" href="./src/penyewaan.php">Penyewaan</a>
+                            <?php if (isset($_SESSION['id_users']) || isset($_SESSION['role']) == 'admin') {  ?>
+                                <a class="nav-link btn btn-sm btn-light text-dark" aria-disabled="disabled">Welcome, <?= $_SESSION['nama_lengkap'] ?></a>
+                            <?php } ?>
+                            <a class="nav-link text-white btn btn-sm btn-danger" href="./logout.php">Logout</a>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        <?php } ?>
+
+
+
+        <!-- users -->
+        <?php if ($_SESSION['role'] == 'users') { ?>
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#">
+                        <h3>MyAedificium</h3>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto gap-2">
+                            <a class="nav-link text-white" aria-current="page" href="./">Home</a>
+                            <a class="nav-link text-white" href="./src/sewa_gedung.php">Sewa Gedung</a>
+                            <a class="nav-link btn btn-sm btn-light text-dark" aria-disabled="disabled">Welcome, <?= $_SESSION['nama_lengkap'] ?></a>
+                            <a class="nav-link text-white btn btn-sm btn-danger" href="./logout.php">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        <?php } ?>
     <?php } ?>
+
 
 
     <div class="img-content"></div>
