@@ -106,10 +106,7 @@ include '../components/header.php'
 include '../components/footer.php'
 ?>
 
-
-
 <?php
-
 
 if (isset($_POST['addGedung'])) {
   $no_gedung = htmlspecialchars($_POST['no_gedung']);
@@ -141,7 +138,5 @@ if (isset($_POST['addGedung'])) {
     }
   }
 }
-
-
 
 ?>
