@@ -6,6 +6,10 @@ if (!isset($_GET['id_penyewaan'])) {
     header("Location: ../");
 }
 
+if ($_SESSION['role'] == 'users') {
+    header("Location: ../");
+}
+
 $id_penyewaan = $_GET['id_penyewaan'];
 
 $query = mysqli_query($connect, "DELETE FROM penyewaan WHERE id_penyewaan = '$id_penyewaan'");

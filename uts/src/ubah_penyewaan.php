@@ -7,11 +7,13 @@ if (!isset($_GET['id_penyewaan'])) {
     header("Location: ../");
 }
 
+if ($_SESSION['role'] == 'users') {
+    header("Location: ../");
+}
+
 $id_penyewaan = $_GET['id_penyewaan'];
 
 $query = "SELECT * FROM penyewaan 
--- INNER JOIN anggota ON penyewaan.no_ktp = anggota.no_ktp
--- INNER JOIN gedung ON penyewaan.no_gedung = gedung.no_gedung
 WHERE id_penyewaan = '$id_penyewaan'";
 $sql = mysqli_query($connect, $query);
 $dataPenyewaan = mysqli_fetch_array($sql);

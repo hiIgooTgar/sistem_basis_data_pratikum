@@ -7,6 +7,10 @@ if (!isset($_GET['id_fasilitas'])) {
     header("Location: ../");
 }
 
+if ($_SESSION['role'] == 'users') {
+    header("Location: ../");
+}
+
 $id_fasilitas = $_GET['id_fasilitas'];
 
 $query = "SELECT * FROM fasilitas WHERE id_fasilitas = '$id_fasilitas'";

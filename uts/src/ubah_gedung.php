@@ -7,6 +7,10 @@ if (!isset($_GET['no_gedung'])) {
     header("Location: ../");
 }
 
+if ($_SESSION['role'] == 'users') {
+    header("Location: ../");
+}
+
 $no_gedung = $_GET['no_gedung'];
 
 $query = "SELECT * FROM gedung WHERE no_gedung = '$no_gedung'";

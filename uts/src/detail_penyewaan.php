@@ -7,6 +7,10 @@ if (!isset($_GET['id_penyewaan'])) {
     header("Location: ../");
 }
 
+if ($_SESSION['role'] == 'users') {
+    header("Location: ../");
+}
+
 $id_penyewaan = $_GET['id_penyewaan'];
 
 $query = "SELECT penyewaan.*, anggota.*, gedung.*, fasilitas.* FROM penyewaan 

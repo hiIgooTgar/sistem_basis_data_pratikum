@@ -6,6 +6,10 @@ if (!isset($_GET['no_ktp'])) {
     header("Location: ../");
 }
 
+if ($_SESSION['role'] == 'users') {
+    header("Location: ../");
+}
+
 $no_ktp = $_GET['no_ktp'];
 
 $query = mysqli_query($connect, "DELETE FROM anggota WHERE no_ktp = '$no_ktp'");

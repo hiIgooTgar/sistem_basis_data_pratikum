@@ -3,7 +3,7 @@
   session_start();
 
   if (!isset($_SESSION['id_users'])) {
-    header("Location: ../sign_in.php");
+    header("Location: ../");
   }
 
   ?>

@@ -1,7 +1,11 @@
 <?php
 
 include '../connection/config.php';
-include '../components/header.php'
+include '../components/header.php';
+
+if ($_SESSION['role'] == 'users') {
+  header("Location: ../");
+}
 
 ?>
 
