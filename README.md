@@ -1,12 +1,27 @@
 # Pratikum Sistem Basis Data | PHP MySQL
 
-Algoritma merupakan serangkaian instruksi atau langkah-langkah logis yang tersusun secara sistematis untuk menyelesaikan suatu masalah atau tugas. Algoritma harus memiliki input (masukan), proses (langkah-langkah), dan output (keluaran). Setiap langkah dalam algoritma harus terdefinisi dengan jelas, efektif (dapat dikerjakan), dan berhingga (berakhir). Contoh sederhana algoritma adalah resep masakan: bahan-bahan adalah input, langkah-langkah memasak adalah proses, dan hidangan matang adalah output. Dalam pemrograman, algoritma bisa berupa langkah-langkah untuk mengurutkan angka atau mencari kata dalam teks.
+<h2>Sistem basis data</h2> adalah sebuah sistem yang dirancang untuk mengelola kumpulan data yang saling berkaitan. Intinya, ia terdiri dari dua komponen utama: basis data itu sendiri (koleksi data) dan Sistem Manajemen Basis Data (DBMS), yaitu perangkat lunak yang memungkinkan kita untuk berinteraksi dengan data tersebut.
 </br>
 
-Struktur data adalah cara data diorganisasikan dan disimpan dalam memori komputer agar dapat diakses dan dimanipulasi secara efisien. Struktur data yang umum meliputi array (kumpulan data dengan tipe sama yang disimpan berurutan), linked list (kumpulan node yang saling terhubung), stack (struktur LIFO - Last In First Out, data terakhir masuk pertama keluar), queue (struktur FIFO - First In First Out, data pertama masuk pertama keluar), tree (struktur hierarkis seperti pohon), dan graph (struktur dengan node dan hubungan antar node). Pemilihan struktur data yang tepat sangat penting karena memengaruhi kinerja algoritma yang menggunakannya. Misalnya, mencari data dalam array yang terurut akan lebih efisien menggunakan algoritma binary search dibandingkan linear search.
-</br> 
-
-Sistem basis data adalah sistem yang terdiri dari kumpulan data yang saling terkait (basis data) dan perangkat lunak yang mengelola data tersebut (DBMS - Database Management System). Basis data menyimpan data dalam tabel-tabel yang terdiri dari baris (record) dan kolom (field). DBMS menyediakan fungsi untuk mendefinisikan struktur data, memanipulasi data (menambah, membaca, mengubah, menghapus), mengontrol akses, menjaga integritas dan keamanan data, serta melakukan backup dan pemulihan. Contoh penggunaan sistem basis data adalah sistem informasi akademik di sekolah, sistem perbankan, dan sistem e-commerce. Sistem basis data penting karena mengurangi redundansi data, menjaga konsistensi dan integritas data, meningkatkan efisiensi akses data, serta memfasilitasi sharing data. Model basis data yang umum adalah model relasional (menggunakan tabel dan relasi antar tabel, contohnya MySQL dan PostgreSQL) dan model NoSQL (lebih fleksibel untuk data tidak terstruktur, contohnya MongoDB).
+Basis data merupakan tempat penyimpanan data secara terstruktur. Data diorganisasikan dalam bentuk tabel-tabel. Setiap tabel terdiri dari baris dan kolom. Baris merepresentasikan sebuah record atau entitas, sedangkan kolom merepresentasikan field atau atribut dari entitas tersebut. Contohnya, dalam basis data siswa di sekolah, setiap baris bisa merepresentasikan data seorang siswa (nama, NIS, kelas, alamat), sedangkan kolom merepresentasikan informasi individual tersebut.
 </br>
 
-Hubungan antara algoritma, struktur data, dan sistem basis data sangat erat. Algoritma bekerja pada data yang disimpan dalam struktur data. Dalam sistem basis data, DBMS menggunakan algoritma dan struktur data untuk mengelola dan memproses data. Pemilihan struktur data yang tepat akan memengaruhi efisiensi algoritma, dan algoritma yang efisien akan memaksimalkan penggunaan struktur data. Dalam konteks sistem basis data, pemilihan model basis data juga menentukan bagaimana data distrukturkan dan diakses.
+DBMS, di sisi lain, berfungsi sebagai jembatan antara pengguna dan basis data. Ia menyediakan berbagai fungsi penting, seperti:
+
+<ul>
+  <li>Definisi data: DBMS memungkinkan kita untuk mendefinisikan struktur basis data, termasuk tipe data untuk setiap kolom, batasan-batasan (misalnya, nilai tidak boleh kosong), dan relasi antar tabel.</li>
+  <li>Manipulasi data: Ini mencakup operasi dasar seperti menambah data baru, membaca data yang sudah ada, mengubah data, dan menghapus data. Operasi-operasi ini sering disebut CRUD (Create, Read, Update, Delete).</li>
+  <li>Kontrol akses: DBMS mengatur siapa saja yang berhak mengakses data dan apa yang boleh mereka lakukan dengan data tersebut. Hal ini penting untuk menjaga keamanan dan privasi data.</li>
+  <li>Integritas data: DBMS memastikan bahwa data yang disimpan akurat dan konsisten. Misalnya, ia dapat mencegah data yang tidak valid dimasukkan ke dalam basis data.</li>
+  <li>Keamanan data: DBMS melindungi data dari akses yang tidak sah dan ancaman lainnya.</li>
+  <li>Backup dan recovery: DBMS menyediakan mekanisme untuk mencadangkan data secara teratur dan memulihkannya jika terjadi kerusakan atau kehilangan data.</li>
+</ul>
+</br>
+
+Sistem basis data digunakan secara luas dalam berbagai aplikasi dan industri. Contohnya termasuk sistem informasi akademik di sekolah, sistem perbankan untuk mengelola rekening dan transaksi nasabah, sistem e-commerce untuk mengelola produk, pesanan, dan pelanggan, serta media sosial untuk menyimpan data profil pengguna, postingan, dan interaksi
+
+
+
+
+
+.
