@@ -1,6 +1,6 @@
 # Pratikum Sistem Basis Data | PHP MySQL
 
-<h2>Sistem basis data</h2> adalah sebuah sistem yang dirancang untuk mengelola kumpulan data yang saling berkaitan. Intinya, ia terdiri dari dua komponen utama: basis data itu sendiri (koleksi data) dan Sistem Manajemen Basis Data (DBMS), yaitu perangkat lunak yang memungkinkan kita untuk berinteraksi dengan data tersebut.
+Sistem basis data adalah sebuah sistem yang dirancang untuk mengelola kumpulan data yang saling berkaitan. Intinya, ia terdiri dari dua komponen utama: basis data itu sendiri (koleksi data) dan Sistem Manajemen Basis Data (DBMS), yaitu perangkat lunak yang memungkinkan kita untuk berinteraksi dengan data tersebut.
 </br>
 
 Basis data merupakan tempat penyimpanan data secara terstruktur. Data diorganisasikan dalam bentuk tabel-tabel. Setiap tabel terdiri dari baris dan kolom. Baris merepresentasikan sebuah record atau entitas, sedangkan kolom merepresentasikan field atau atribut dari entitas tersebut. Contohnya, dalam basis data siswa di sekolah, setiap baris bisa merepresentasikan data seorang siswa (nama, NIS, kelas, alamat), sedangkan kolom merepresentasikan informasi individual tersebut.
@@ -16,12 +16,5 @@ DBMS, di sisi lain, berfungsi sebagai jembatan antara pengguna dan basis data. I
   <li>Keamanan data: DBMS melindungi data dari akses yang tidak sah dan ancaman lainnya.</li>
   <li>Backup dan recovery: DBMS menyediakan mekanisme untuk mencadangkan data secara teratur dan memulihkannya jika terjadi kerusakan atau kehilangan data.</li>
 </ul>
-</br>
 
 Sistem basis data digunakan secara luas dalam berbagai aplikasi dan industri. Contohnya termasuk sistem informasi akademik di sekolah, sistem perbankan untuk mengelola rekening dan transaksi nasabah, sistem e-commerce untuk mengelola produk, pesanan, dan pelanggan, serta media sosial untuk menyimpan data profil pengguna, postingan, dan interaksi
-
-
-
-
-
-.
