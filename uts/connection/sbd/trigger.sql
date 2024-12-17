@@ -22,13 +22,13 @@ DELIMITER $$
 CREATE OR REPLACE TRIGGER tr_cekharga
 BEFORE INSERT ON tbproduk
 FOR EACH ROW BEGIN
-	IF NEW.harga <= 1000 THEN 
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Cek kembalian harga produk!';
-	END IF;
+	if NEW.harga <= 1000 then 
+	Signal sqlstate '45000' SET message_text = 'Cek kembalian harga produk!';
+	end if;
 END$$
 
-INSERT INTO tbproduk VALUES (8, 'Head Phone', 3, 10, 500)
-SELECT * FROM tbproduk
+insert into tbproduk values (8, 'Head Phone', 3, 10, 500)
+select * from tbproduk
 
 
 
@@ -42,34 +42,34 @@ FOR EACH ROW BEGIN
 	END IF;
 END$$
 
-UPDATE tbproduk SET harga = 100 WHERE idproduk = 2;
+update tbproduk set harga = 100 where idproduk = 2;
 SELECT * FROM tbproduk
 
 
 
 
-CREATE TABLE tblog_produk (
-idblog INT(10) PRIMARY KEY AUTO_INCREMENT,
-idproduk INT(11),
-harga_lama INT,
-harga_baru INT,
-waktu DATETIME,
+create table tblog_produk (
+idblog int(10) primary key auto_increment,
+idproduk int(11),
+harga_lama int,
+harga_baru int,
+waktu datetime,
 
-FOREIGN KEY (idproduk) REFERENCES tbproduk(idproduk)
+foreign key (idproduk) references tbproduk(idproduk)
 )
 
-DELIMITER $$
-CREATE OR REPLACE TRIGGER tb_update_harga_produk
-AFTER UPDATE ON tbproduk
-FOR EACH ROW BEGIN
-	INSERT INTO tblog_produk SET idproduk = OLD.idproduk,
+delimiter $$
+create or replace trigger tb_update_harga_produk
+after UPDATE on tbproduk
+for each row begin
+	insert into tblog_produk set idproduk = OLD.idproduk,
 	harga_lama = OLD.harga,
 	harga_baru = NEW.harga,
-	waktu = NOW();
-END $$
+	waktu = now();
+end $$
 
-UPDATE tbproduk SET harga = 300000000 WHERE idproduk = 1;
-SELECT * FROM tbproduk
+UPDATE tbproduk set harga = 300000000 where idproduk = 1;
+select * from tbproduk
 
 
 
@@ -85,8 +85,7 @@ FOR EACH ROW BEGIN
  END $$
  
  DELETE FROM tbpemasok WHERE idpemasok = 6;
-
- SELECT * FROM tbpemasok
+ select * from tbpemasok
  
  
  
@@ -97,5 +96,14 @@ FOR EACH ROW BEGIN
 	 DELETE FROM tbdetailjual WHERE notajual = OLD.notajual;
  END $$
  
- DELETE FROM tbpenjualan WHERE notajual = 'PJN-1';
+DELETE FROM tbpenjualan WHERE notajual = 'PJN-2';
+SELECT * FROM tbpenjualan
+
+INSERT INTO tbpenjualan VALUES
+(1, 'PJN-1', '2024-11-26', 2, 3, 40000),
+(2, 'PJN-2', '2024-11-25', 3, 5, 30000),
+(3, 'PJN-3', '2024-11-26', 3, 2, 600000),
+(4, 'PJN-2', '2024-11-26', 2, 10, 30000),
+(5, 'PJN-3', '2024-11-24', 1, 9, 600000);
+
  
